@@ -44,6 +44,8 @@ compose.desktop {
             targetFormats(TargetFormat.Msi, TargetFormat.Deb)
             packageName = "testeditor"
             packageVersion = appVersion
+
+            appResourcesRootDir.set(project.layout.projectDirectory.dir("src/main/resources"))
         }
     }
 }

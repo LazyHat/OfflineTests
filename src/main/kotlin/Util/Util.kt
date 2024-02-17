@@ -1,11 +1,13 @@
 package Util
 
+import LocalBuildConfig
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -18,8 +20,8 @@ import androidx.compose.ui.unit.dp
 import java.io.File
 
 @Composable
-fun svgPainterResource(resourcePath: String, density: Density = LocalDensity.current): Painter =
-    remember { File(resourcePath).inputStream().use { loadSvgPainter(it, density) } }
+fun svgPainterResource(resource: File, density: Density = LocalDensity.current): Painter =
+    remember { resource.inputStream().use { loadSvgPainter(it, density) } }
 
 @Composable
 fun Dialog(
@@ -51,7 +53,57 @@ fun Dialog(
 //fun <T> List<T>.replace(index: Int, replace: (T) -> T) =
 //    this.mapIndexed { mindex, it -> if (mindex == index) replace(it) else it }
 
-object BuildConfig {
-    val version: String = File("gradle.properties").readText().split("\n").find { it.startsWith("app.version") }?.substringAfter('=')
-        ?: error("BUILD CONFIG INITIALIZATION ERROR")
+data class BuildConfig(
+    val appVersion: String,
+    val resourceDir: File,
+    val os: String
+) {
+    companion object {
+        val _os = System.getProperty("os.name")
+
+        //depending on whether it is a build or a simple launch from the IDE, you need to select the BuildConfig init function B(Build) or D(Debug)
+        fun ProvidableCompositionLocal<BuildConfig>.provide() = this provides initB()
+
+        private fun initB() = BuildConfig(
+            appVersion = System.getProperty("jpackage.app-version"),
+            resourceDir = File(System.getProperty("compose.application.resources.dir")),
+            os = _os
+        )
+
+        private fun initD() = BuildConfig(
+            appVersion = File("gradle.properties").readText().split('\n').find { it.startsWith("app.version=") }
+                ?.substringAfter('=') ?: "NOTHING",
+            resourceDir = File("src/main/resources/common"),
+            os = _os
+        )
+    }
+}
+
+object R {
+    object drawable {
+
+        val close: File
+            @Composable
+            get() = LocalBuildConfig.current.resourceDir.resolve("close.svg")
+
+        val delete_forever: File
+            @Composable
+            get() = LocalBuildConfig.current.resourceDir.resolve("delete_forever.svg")
+
+        val draft: File
+            @Composable
+            get() = LocalBuildConfig.current.resourceDir.resolve("draft.svg")
+
+        val file_save: File
+            @Composable
+            get() = LocalBuildConfig.current.resourceDir.resolve("file_save.svg")
+
+        val folder: File
+            @Composable
+            get() = LocalBuildConfig.current.resourceDir.resolve("folder.svg")
+
+        val save: File
+            @Composable
+            get() = LocalBuildConfig.current.resourceDir.resolve("save.svg")
+    }
 }

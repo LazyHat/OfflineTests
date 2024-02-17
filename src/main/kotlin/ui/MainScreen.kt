@@ -1,8 +1,9 @@
 package ui
 
+import LocalBuildConfig
 import LocalMainViewModel
-import Util.BuildConfig
 import Util.Dialog
+import Util.R
 import Util.svgPainterResource
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
@@ -37,11 +38,14 @@ import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
 import models.DialogWindow
 import models.Question
+import models.TestInfo
 import models.TestState
+import java.io.File
 
 
 @Composable
 fun MainScreen() {
+    val buildConfig = LocalBuildConfig.current
     val vm = LocalMainViewModel.current
     val testState by vm.testStateAsState()
     val isOpened = testState is TestState.Opened
@@ -57,34 +61,34 @@ fun MainScreen() {
                 MyIconButton(
                     enabled = !isOpened,
                     onClick = { vm.newTest() },
-                    resourcePath = "src/main/resources/draft.svg"
+                    resource = R.drawable.draft
                 )
                 MyIconButton(
                     enabled = !isOpened,
                     onClick = { vm.openTest() },
-                    resourcePath = "src/main/resources/folder.svg"
+                    resource = R.drawable.folder
                 )
                 MyIconButton(
                     enabled = isOpened,
                     onClick = { vm.closeTest() },
-                    resourcePath = "src/main/resources/close.svg"
+                    resource = R.drawable.close
                 )
                 Spacer(modifier = Modifier.width(2.dp).fillMaxHeight().background(Color.LightGray))
                 MyIconButton(
                     enabled = isOpened && openedFile != null,
                     onClick = { vm.saveTest() },
-                    resourcePath = "src/main/resources/save.svg"
+                    resource = R.drawable.save
                 )
                 MyIconButton(
                     enabled = isOpened,
                     onClick = { vm.saveTestToFile() },
-                    resourcePath = "src/main/resources/file_save.svg"
+                    resource = R.drawable.file_save
                 )
                 Spacer(modifier = Modifier.width(2.dp).fillMaxHeight().background(Color.LightGray))
                 MyIconButton(
                     enabled = openedFile != null && isOpened,
                     onClick = { vm.deleteTest() },
-                    resourcePath = "src/main/resources/delete_forever.svg"
+                    resource = R.drawable.delete_forever
                 )
                 Spacer(modifier = Modifier.width(2.dp).fillMaxHeight().background(Color.LightGray))
                 Checkbox(
@@ -100,21 +104,22 @@ fun MainScreen() {
         bottomBar = {
             Row(modifier = Modifier.padding(2.dp).fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                 Row(horizontalArrangement = Arrangement.spacedBy(20.dp)) {
-                    Text("OS: ${System.getProperty("os.name")}")
-                    Text("ver: ${BuildConfig.version}")
+                    Text("OS: ${buildConfig.os}")
+                    Text("ver: ${buildConfig.appVersion}")
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(20.dp)) {
                     (testState as? TestState.Opened)?.let {
                         Text("Questions: ${it.questions.size}")
                     }
                     openedFile?.let {
-                        Text("filename: $it")
+                        Text("file: $it")
                     }
                 }
             }
         }
     ) {
         Box(contentAlignment = Alignment.Center) {
+
             when (testState) {
                 is TestState.Opened -> testScreen(vm, testState as TestState.Opened)
                 is TestState.Closed -> {
@@ -141,11 +146,16 @@ fun MainScreen() {
 fun testScreen(vm: MainViewModel, data: TestState.Opened) {
 
 //    val windowKeyEventHolder = LocalWindowKeyEventHolder.current
+
     LazyColumn(
         modifier = Modifier.padding(20.dp).fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        item {
+            TestInfoEdit(data.testInfo) { vm.editTestInfo(it) }
+        }
         itemsIndexed(data.questions) { index, it1 ->
+            Spacer(modifier = Modifier.height(10.dp))
             AnswerEditQuestion(
                 index = index,
                 data = it1.question,
@@ -154,7 +164,33 @@ fun testScreen(vm: MainViewModel, data: TestState.Opened) {
                 onEditData = { vm.editQuestion(index, it) },
                 onDelete = { vm.removeQuestion(index) }
             )
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(10.dp))
+        }
+    }
+}
+
+@Composable
+fun TestInfoEdit(info: TestInfo, onEdit: (TestInfo) -> Unit) {
+    var tempInfo by remember(info) { mutableStateOf(info) }
+
+    LaunchedEffect(tempInfo) {
+        delay(100)
+        onEdit(tempInfo)
+    }
+
+    Card(
+        modifier = Modifier.defaultMinSize(minWidth = 500.dp)
+    ) {
+        Row(
+            modifier = Modifier.padding(20.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text("Title: ", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+            IndicatedTextField(
+                tempInfo.title,
+                { tempInfo = tempInfo.copy(title = it) },
+                textStyle = TextStyle(fontSize = 18.sp, color = Color.White),
+            )
         }
     }
 }
@@ -183,7 +219,7 @@ fun AnswerEditQuestion(
             MyIconButton(
                 enabled = editing,
                 onClick = onDelete,
-                resourcePath = "src/main/resources/close.svg",
+                resource = R.drawable.close,
                 tint = Color.Red,
                 modifier = Modifier.align(Alignment.TopEnd)
             )
@@ -247,7 +283,7 @@ fun AnswerEditQuestion(
 
                             MyIconButton(
                                 enabled = editing,
-                                resourcePath = "src/main/resources/delete_forever.svg",
+                                resource = R.drawable.delete_forever,
                                 tintOnDisabled = Color.Transparent,
                                 onClick = {
                                     tempData = tempData.removeAnswer(index)
@@ -278,7 +314,7 @@ fun AnswerEditQuestion(
 fun MyIconButton(
     enabled: Boolean,
     onClick: () -> Unit,
-    resourcePath: String,
+    resource: File,
     tint: Color = MaterialTheme.colors.onBackground,
     tintOnDisabled: Color = MaterialTheme.colors.onBackground.copy(alpha = 0.5f),
     modifier: Modifier = Modifier
@@ -289,7 +325,7 @@ fun MyIconButton(
         modifier = modifier
     ) {
         Image(
-            svgPainterResource(resourcePath),
+            svgPainterResource(resource),
             null,
             colorFilter = ColorFilter.tint(if (enabled) tint else tintOnDisabled)
         )

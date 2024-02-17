@@ -41,6 +41,11 @@ class MainViewModel : ViewModel() {
     fun openedFileNameAsState() =
         _file.map { it?.name }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null).collectAsState()
 
+    fun editTestInfo(new: TestInfo) = _memoryTest.update {
+        check(it != null)
+        it.copy(info = new)
+    }
+
 //    fun stopEditingAll() {
 //        _editingQuestionIndex.value = null
 //    }
