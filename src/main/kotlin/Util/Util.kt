@@ -1,13 +1,11 @@
 package Util
 
-import LocalBuildConfig
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -53,57 +51,44 @@ fun Dialog(
 //fun <T> List<T>.replace(index: Int, replace: (T) -> T) =
 //    this.mapIndexed { mindex, it -> if (mindex == index) replace(it) else it }
 
-data class BuildConfig(
-    val appVersion: String,
-    val resourceDir: File,
-    val os: String
-) {
-    companion object {
-        val _os = System.getProperty("os.name")
+enum class OS {
+    Linux,
+    Windows,
+    Unspecified
+}
 
-        //depending on whether it is a build or a simple launch from the IDE, you need to select the BuildConfig init function B(Build) or D(Debug)
-        fun ProvidableCompositionLocal<BuildConfig>.provide() = this provides initB()
 
-        private fun initB() = BuildConfig(
-            appVersion = System.getProperty("jpackage.app-version"),
-            resourceDir = File(System.getProperty("compose.application.resources.dir")),
-            os = _os
-        )
+object BuildConfig {
 
-        private fun initD() = BuildConfig(
-            appVersion = File("gradle.properties").readText().split('\n').find { it.startsWith("app.version=") }
-                ?.substringAfter('=') ?: "NOTHING",
-            resourceDir = File("src/main/resources/common"),
-            os = _os
-        )
+    //depending on whether it is a build or a simple launch from the IDE, you need to select this var to true or false
+    private const val debug = true
+
+    val appVersion: String =
+        if (debug) File("gradle.properties").readText().split('\n').find { it.startsWith("app.version=") }
+            ?.substringAfter('=') ?: "NOTHING" else System.getProperty("jpackage.app-version")
+    val resourceDir: File =
+        if (debug) File("src/main/resources/common") else File(System.getProperty("compose.application.resources.dir"))
+
+    val os = try {
+        OS.valueOf(System.getProperty("os.name"))
+    } catch (e: IllegalStateException) {
+        OS.Unspecified
     }
 }
 
 object R {
     object drawable {
 
-        val close: File
-            @Composable
-            get() = LocalBuildConfig.current.resourceDir.resolve("close.svg")
+        val close = BuildConfig.resourceDir.resolve("close.svg")
 
-        val delete_forever: File
-            @Composable
-            get() = LocalBuildConfig.current.resourceDir.resolve("delete_forever.svg")
+        val delete_forever = BuildConfig.resourceDir.resolve("delete_forever.svg")
 
-        val draft: File
-            @Composable
-            get() = LocalBuildConfig.current.resourceDir.resolve("draft.svg")
+        val draft = BuildConfig.resourceDir.resolve("draft.svg")
 
-        val file_save: File
-            @Composable
-            get() = LocalBuildConfig.current.resourceDir.resolve("file_save.svg")
+        val file_save = BuildConfig.resourceDir.resolve("file_save.svg")
 
-        val folder: File
-            @Composable
-            get() = LocalBuildConfig.current.resourceDir.resolve("folder.svg")
+        val folder = BuildConfig.resourceDir.resolve("folder.svg")
 
-        val save: File
-            @Composable
-            get() = LocalBuildConfig.current.resourceDir.resolve("save.svg")
+        val save = BuildConfig.resourceDir.resolve("save.svg")
     }
 }

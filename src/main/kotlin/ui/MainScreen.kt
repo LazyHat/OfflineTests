@@ -1,7 +1,7 @@
 package ui
 
-import LocalBuildConfig
 import LocalMainViewModel
+import Util.BuildConfig
 import Util.Dialog
 import Util.R
 import Util.svgPainterResource
@@ -45,7 +45,6 @@ import java.io.File
 
 @Composable
 fun MainScreen() {
-    val buildConfig = LocalBuildConfig.current
     val vm = LocalMainViewModel.current
     val testState by vm.testStateAsState()
     val isOpened = testState is TestState.Opened
@@ -104,8 +103,8 @@ fun MainScreen() {
         bottomBar = {
             Row(modifier = Modifier.padding(2.dp).fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                 Row(horizontalArrangement = Arrangement.spacedBy(20.dp)) {
-                    Text("OS: ${buildConfig.os}")
-                    Text("ver: ${buildConfig.appVersion}")
+                    Text("OS: ${BuildConfig.os}")
+                    Text("ver: ${BuildConfig.appVersion}")
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(20.dp)) {
                     (testState as? TestState.Opened)?.let {
@@ -126,10 +125,11 @@ fun MainScreen() {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
                             Text("Test is not opened", fontSize = 20.sp)
+                            Spacer(Modifier.height(100.dp))
                             Button({ vm.newTest() }) {
                                 Text("Create new Test")
                             }
-                            Button({vm.openTest()}){
+                            Button({ vm.openTest() }) {
                                 Text("Open test from file")
                             }
                         }

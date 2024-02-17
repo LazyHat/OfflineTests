@@ -1,5 +1,3 @@
-import Util.BuildConfig
-import Util.BuildConfig.Companion.provide
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -17,7 +15,6 @@ val LocalDensity = compositionLocalOf<Density> { error("DENSITY ERROR") }
 
 //val LocalWindowKeyEventHolder = compositionLocalOf<WindowKeyEventHolder> { error("WINDDOW KEY EVENT HOLDER ERROR") }
 val LocalMainViewModel = compositionLocalOf<MainViewModel> { error("VIEWMODEL COMPOSITION ERROR") }
-val LocalBuildConfig = compositionLocalOf<BuildConfig> { error("BUILD CONFIG ERROR") }
 
 @Composable
 @Preview
@@ -25,21 +22,19 @@ fun App(exit: () -> Unit) {
     MaterialTheme(
         colors = mainColors
     ) {
-        CompositionLocalProvider(value = LocalBuildConfig.provide()) {
-            CompositionLocalProvider(value = LocalDensity provides Density(1f)) {
-                //CompositionLocalProvider(LocalWindowKeyEventHolder provides WindowKeyEventHolder()) {
+        CompositionLocalProvider(value = LocalDensity provides Density(1f)) {
+            //CompositionLocalProvider(LocalWindowKeyEventHolder provides WindowKeyEventHolder()) {
 
-                Window(
-                    onCloseRequest = exit,
-                    // onKeyEvent = LocalWindowKeyEventHolder.current.onKeyEvent,
-                    title = "TestEditor"
-                ) {
-                    CompositionLocalProvider(LocalMainViewModel provides MainViewModel()) {
-                        MainScreen()
-                    }
+            Window(
+                onCloseRequest = exit,
+                // onKeyEvent = LocalWindowKeyEventHolder.current.onKeyEvent,
+                title = "TestEditor"
+            ) {
+                CompositionLocalProvider(LocalMainViewModel provides MainViewModel()) {
+                    MainScreen()
                 }
-                //  }
             }
+            //  }
         }
     }
 }

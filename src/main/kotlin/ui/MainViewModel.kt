@@ -1,5 +1,7 @@
 package ui
 
+import Util.BuildConfig
+import Util.OS
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import com.hoc081098.kmp.viewmodel.ViewModel
@@ -9,6 +11,8 @@ import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import models.*
 import java.io.File
+import javax.swing.JFileChooser
+import javax.swing.filechooser.FileNameExtensionFilter
 
 class MainViewModel : ViewModel() {
     private val _file = MutableStateFlow<File?>(null)
@@ -111,17 +115,37 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    private fun chooseFile(): File? {
-        val p = ProcessBuilder("zenity", "--file-selection", "--filename=*.test").start()
+    private fun getFileLinux(folder: Boolean): File? {
+        val commands = listOf("zenity", "--file-selection").let {
+            if (folder)
+                it + "--save"
+            else
+                it
+        }
+        val p = ProcessBuilder(commands).start()
         p.waitFor()
         return if (p.exitValue() == 0) {
-            val path = p.inputReader().use { it.readLine() }.let {
-                if (!it.endsWith(".test"))
-                    error("INVALID FILE EXTENSION")
-                else it
-            }
-            File(path)
+            return File(p.inputReader().use { it.readLine() })
         } else null
+    }
+
+    private fun getFileUnspecified(folder: Boolean): File? {
+        val message = if (folder) "Choose destination" else "Choose file"
+        val jfc = JFileChooser()
+        jfc.fileFilter = FileNameExtensionFilter("Test File", "test")
+        jfc.dialogType = if (folder) JFileChooser.SAVE_DIALOG else JFileChooser.OPEN_DIALOG
+        val ret = jfc.showDialog(null, message)
+        return if (ret == JFileChooser.APPROVE_OPTION) {
+            jfc.selectedFile
+        } else null
+    }
+
+    private fun getFileOS(folder: Boolean) = if (BuildConfig.os == OS.Linux) getFileLinux(folder) else getFileUnspecified(folder)
+
+    private fun chooseFile(): File? {
+        val file = getFileOS(false)
+        check(file == null || file.extension == "test") { "INVALID FILE EXTENSION" }
+        return file
     }
 
     private fun getTestFromFile(file: File): Test {
@@ -136,17 +160,12 @@ class MainViewModel : ViewModel() {
     }
 
     private fun chooseSaveDestination(): File? {
-        val p = ProcessBuilder("zenity", "--file-selection", "--save").start()
-        p.waitFor()
-        return if (p.exitValue() == 0) {
-            val path = p.inputReader().use { it.readLine() }.let {
-                if (!it.endsWith(".test"))
-                    "$it.test"
-                else it
-            }
-            File(path)
-        } else null
-
+        return getFileOS(true)?.let {
+            if (it.extension != "test") {
+                it.renameTo(File(it.path + ".test"))
+                it
+            } else it
+        }
     }
 
     private fun saveTestToFile(file: File, test: Test, owerwriteBypass: Boolean = false) {
