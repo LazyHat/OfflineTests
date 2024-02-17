@@ -26,7 +26,7 @@ repositories {
 dependencies {
     implementation(compose.desktop.currentOs)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:$swingVersion")
-    implementation("io.insert-koin:koin-core:$koinVersion")
+    //implementation("io.insert-koin:koin-core:$koinVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
     implementation("io.github.hoc081098:kmp-viewmodel-koin-compose-jvm:$kmpVMVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:$immutableVersion")

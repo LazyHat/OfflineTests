@@ -40,5 +40,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
 /test.json
 /test.test
+/src/main/kotlin/WindowKeyEventHolder.kt

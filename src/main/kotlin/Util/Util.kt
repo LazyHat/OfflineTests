@@ -61,7 +61,7 @@ enum class OS {
 object BuildConfig {
 
     //depending on whether it is a build or a simple launch from the IDE, you need to select this var to true or false
-    private const val debug = false
+    private const val debug = true
 
     val appVersion: String =
         if (debug) File("gradle.properties").readText().split('\n').find { it.startsWith("app.version=") }
@@ -70,7 +70,7 @@ object BuildConfig {
         if (debug) File("src/main/resources/common") else File(System.getProperty("compose.application.resources.dir"))
 
     val os = try {
-        OS.valueOf(System.getProperty("os.name"))
+        OS.valueOf(System.getProperty("os.name").substringBefore(' '))
     } catch (e: IllegalStateException) {
         OS.Unspecified
     }
