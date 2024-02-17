@@ -1,12 +1,21 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+val koinVersion = properties.get("koin.version")
+val serializationVersion = properties.get("serialization.version")
+val swingVersion = properties.get("swing.version")
+val kmpVMVersion = properties.get("kmp.viewmodel.version")
+val immutableVersion = properties.get("collections.immutable.version")
+val appVersion = properties.get("app.version").toString()
 
 plugins {
     kotlin("jvm")
     id("org.jetbrains.compose")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 group = "ru.lazyhat"
-version = "1.0-SNAPSHOT"
+version = appVersion
 
 repositories {
     mavenCentral()
@@ -15,11 +24,16 @@ repositories {
 }
 
 dependencies {
-    // Note, if you develop a library, you should use compose.desktop.common.
-    // compose.desktop.currentOs should be used in launcher-sourceSet
-    // (in a separate module for demo project and in testMain).
-    // With compose.desktop.common you will also lose @Preview functionality
     implementation(compose.desktop.currentOs)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:$swingVersion")
+    implementation("io.insert-koin:koin-core:$koinVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
+    implementation("io.github.hoc081098:kmp-viewmodel-koin-compose-jvm:$kmpVMVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:$immutableVersion")
+}
+
+tasks.withType<KotlinCompile>() {
+    kotlinOptions.jvmTarget = "19"
 }
 
 compose.desktop {
@@ -27,9 +41,9 @@ compose.desktop {
         mainClass = "MainKt"
 
         nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+            targetFormats(TargetFormat.Msi, TargetFormat.Deb)
             packageName = "testeditor"
-            packageVersion = "1.0.0"
+            packageVersion = appVersion
         }
     }
 }
