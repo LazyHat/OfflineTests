@@ -112,11 +112,11 @@ class MainViewModel : ViewModel() {
     }
 
     private fun chooseFile(): File? {
-        val p = ProcessBuilder("zenity", "--file-selection", "--filename=*.json").start()
+        val p = ProcessBuilder("zenity", "--file-selection", "--filename=*.test").start()
         p.waitFor()
         return if (p.exitValue() == 0) {
             val path = p.inputReader().use { it.readLine() }.let {
-                if (!it.endsWith(".json"))
+                if (!it.endsWith(".test"))
                     error("INVALID FILE EXTENSION")
                 else it
             }
@@ -129,7 +129,7 @@ class MainViewModel : ViewModel() {
             error("FILE DOES NOT EXISTS")
         else
             return try {
-                Json.decodeFromString(file.readText())
+                Json.decodeFromString(file.readBytes().decodeToString())
             } catch (e: SerializationException) {
                 error("FILE DESERIALIZATION ERROR")
             }
@@ -140,8 +140,8 @@ class MainViewModel : ViewModel() {
         p.waitFor()
         return if (p.exitValue() == 0) {
             val path = p.inputReader().use { it.readLine() }.let {
-                if (!it.endsWith(".json"))
-                    "$it.json"
+                if (!it.endsWith(".test"))
+                    "$it.test"
                 else it
             }
             File(path)
@@ -152,11 +152,11 @@ class MainViewModel : ViewModel() {
     private fun saveTestToFile(file: File, test: Test, owerwriteBypass: Boolean = false) {
         if (!file.exists()) {
             file.createNewFile()
-            file.writeText(Json.encodeToString(test))
+            file.writeBytes(Json.encodeToString(test).encodeToByteArray())
             if (_file.value == null)
                 _file.value = file
         } else if (owerwriteBypass) {
-            file.writeText(Json.encodeToString(test))
+            file.writeBytes(Json.encodeToString(test).encodeToByteArray())
             if (_file.value == null)
                 _file.value = file
         } else {
@@ -166,7 +166,7 @@ class MainViewModel : ViewModel() {
                 "no",
                 null,
                 {
-                    file.writeText(Json.encodeToString(test))
+                    file.writeBytes(Json.encodeToString(test).encodeToByteArray())
                     _dialogWindow.value = DialogWindow.Closed
                     if (_file.value == null)
                         _file.value = file

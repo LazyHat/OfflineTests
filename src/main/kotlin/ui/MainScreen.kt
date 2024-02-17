@@ -129,6 +129,9 @@ fun MainScreen() {
                             Button({ vm.newTest() }) {
                                 Text("Create new Test")
                             }
+                            Button({vm.openTest()}){
+                                Text("Open test from file")
+                            }
                         }
                     }
                 }
