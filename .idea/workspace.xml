@@ -4,25 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0822463e-c06c-4ba6-ba75-78371b5a7006" name="Changes" comment="1.0.5">
+    <list default="true" id="0822463e-c06c-4ba6-ba75-78371b5a7006" name="Changes" comment="1.0.9-1">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Util/Util.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Util/WindowKeyEventHolder.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/DialogWindow.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Question.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Test.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/TestState.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/MainScreen.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/MainViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/theme/Colors.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/common/close.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/common/delete_forever.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/common/draft.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/common/file_save.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/common/folder.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/common/save.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/kotlin/Utils/BuildConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/kotlin/Utils/BuildConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-editor/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-editor/src/main/kotlin/Util/Resources.kt" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/kotlin/Util/Resources.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-editor/src/main/resources/close.svg" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/resources/common/close.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-editor/src/main/resources/delete_forever.svg" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/resources/common/delete_forever.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-editor/src/main/resources/draft.svg" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/resources/common/draft.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-editor/src/main/resources/file_save.svg" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/resources/common/file_save.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-editor/src/main/resources/folder.svg" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/resources/common/folder.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-editor/src/main/resources/save.svg" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/resources/common/save.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +33,9 @@
     <system id="GRADLE">
       <state>
         <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/test-editor">
           <activation />
         </task>
         <projects_view>
@@ -90,18 +88,18 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/lazyhat/Desktop/novsu2/course/offline-tests&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2582897&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "corretto-19",
+    "last_opened_file_path": "/home/lazyhat/Desktop/novsu2/course/offline-tests",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2582897"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/test-guesser/src/main/kotlin" />
@@ -111,6 +109,7 @@
       <recent name="$PROJECT_DIR$/project2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test-editor/src/main/resources/common" />
       <recent name="$PROJECT_DIR$/project1" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -124,32 +123,132 @@
       <command value="gradle --scan" />
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.test-guesser">
-    <configuration name="test-editor" type="JetRunConfigurationType" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="MainKt" />
-      <module name="offline-tests.test-editor.main" />
-      <shortenClasspath name="NONE" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Gradle.offline-tests:test-editor [runDistributable]">
+    <configuration name="offline-tests:test-editor [dependencyInsight]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/test-editor" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencyInsight" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
     </configuration>
-    <configuration name="test-guesser" type="JetRunConfigurationType" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="MainKt" />
-      <module name="offline-tests.test-guesser.main" />
-      <shortenClasspath name="NONE" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="offline-tests:test-editor [dependentComponents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/test-editor" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependentComponents" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="offline-tests:test-editor [generateComposeResClass]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/test-editor" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="generateComposeResClass" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="offline-tests:test-editor [resolvableConfigurations]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/test-editor" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="resolvableConfigurations" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="offline-tests:test-editor [runDistributable]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/test-editor" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runDistributable" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Gradle.desktop" />
-      <item itemvalue="Kotlin.test-editor" />
-      <item itemvalue="Kotlin.test-guesser" />
+      <item itemvalue="Gradle.offline-tests:test-editor [dependencyInsight]" />
+      <item itemvalue="Gradle.offline-tests:test-editor [dependentComponents]" />
+      <item itemvalue="Gradle.offline-tests:test-editor [generateComposeResClass]" />
+      <item itemvalue="Gradle.offline-tests:test-editor [resolvableConfigurations]" />
+      <item itemvalue="Gradle.offline-tests:test-editor [runDistributable]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.test-guesser" />
-        <item itemvalue="Kotlin.test-editor" />
+        <item itemvalue="Gradle.offline-tests:test-editor [runDistributable]" />
+        <item itemvalue="Gradle.offline-tests:test-editor [generateComposeResClass]" />
+        <item itemvalue="Gradle.offline-tests:test-editor [dependentComponents]" />
+        <item itemvalue="Gradle.offline-tests:test-editor [resolvableConfigurations]" />
+        <item itemvalue="Gradle.offline-tests:test-editor [dependencyInsight]" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708329365508</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1.0.9-1">
+      <option name="closed" value="true" />
+      <created>1708329926488</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708329926488</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,7 +305,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1.0.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0.5" />
+    <MESSAGE value="1.0.9-1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0.9-1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

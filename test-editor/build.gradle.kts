@@ -43,7 +43,7 @@ compose.desktop {
             packageName = "test-editor"
             packageVersion = appVersion
 
-            appResourcesRootDir.set(project.layout.projectDirectory.dir("test-editor/src/main/resources"))
+            appResourcesRootDir.set(project.layout.projectDirectory.dir("src/main/resources"))
         }
     }
 }

@@ -1,4 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val serializationVersion = properties.get("serialization.version")
@@ -31,21 +30,6 @@ dependencies {
     //implementation("io.github.hoc081098:kmp-viewmodel-koin-compose-jvm:$kmpVMVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:$immutableVersion")
 }
-
-compose.desktop {
-    application {
-        mainClass = "MainKt"
-
-        nativeDistributions {
-            targetFormats(TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "testeditor"
-            packageVersion = appVersion
-
-            appResourcesRootDir.set(project.layout.projectDirectory.dir("src/main/resources"))
-        }
-    }
-}
-
 
 tasks.withType<JavaCompile>(){
     sourceCompatibility = jvmToolChain

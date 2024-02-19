@@ -11,7 +11,7 @@ enum class OS {
 object BuildConfig {
 
     //depending on whether it is a build or a simple launch from the IDE, you need to select this var to true or false
-    const val debug = true
+    const val debug = false
 
     val appVersion: String =
         if (debug) File("gradle.properties").readText().split('\n').find { it.startsWith("app.version=") }
