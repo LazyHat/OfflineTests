@@ -4,49 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0822463e-c06c-4ba6-ba75-78371b5a7006" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/Utils/BuildConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/Utils/Dialog.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/Utils/Other.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/Utils/WindowKeyEventHolder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/files/API.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/models/Question.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/models/Test.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/theme/Colors.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/theme/Theme.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-editor/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-editor/src/main/kotlin/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-editor/src/main/kotlin/Util/Resources.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-editor/src/main/kotlin/models/Models.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-editor/src/main/kotlin/models/TestState.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-editor/src/main/kotlin/ui/MainScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-editor/src/main/kotlin/ui/MainViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-editor/src/main/resources/close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-editor/src/main/resources/delete_forever.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-editor/src/main/resources/draft.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-editor/src/main/resources/file_save.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-editor/src/main/resources/folder.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-editor/src/main/resources/save.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-guesser/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-guesser/src/main/kotlin/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-guesser/src/main/kotlin/MainScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-guesser/src/main/kotlin/MainViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-guesser/src/main/kotlin/Models.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-guesser/src/main/kotlin/Util.kt" afterDir="false" />
+    <list default="true" id="0822463e-c06c-4ba6-ba75-78371b5a7006" name="Changes" comment="1.0.5">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Util/Util.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Util/WindowKeyEventHolder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/DialogWindow.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Question.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Test.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/TestState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/MainScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/MainViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/theme/Colors.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/common/close.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/common/delete_forever.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/common/draft.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/common/file_save.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/common/folder.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/common/save.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,8 +62,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "LazyHat"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bc16a950-d692-4893-979c-09bec134afe3" />
+        <option name="url" value="https://github.com/LazyHat/OfflineTests" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="KotlinCodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -101,7 +94,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-19&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/lazyhat/Desktop/novsu2/course/offline-tests&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
@@ -149,6 +142,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Gradle.desktop" />
       <item itemvalue="Kotlin.test-editor" />
       <item itemvalue="Kotlin.test-guesser" />
     </list>
@@ -168,6 +162,15 @@
       <option name="presentableId" value="Default" />
       <updated>1708274325412</updated>
     </task>
+    <task id="LOCAL-00001" summary="1.0.5">
+      <option name="closed" value="true" />
+      <created>1708329365508</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708329365508</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,7 +184,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -192,6 +195,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1.0.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0.5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
