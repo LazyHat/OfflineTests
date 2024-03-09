@@ -4,28 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0822463e-c06c-4ba6-ba75-78371b5a7006" name="Changes" comment="1.0.9-2 bugfixes">
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/ksp/BuildConfigFileGenerator.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/ksp/BuildConfigOptions.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/ksp/BuildConfigProcessor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/ksp/SymbolProcessorProvider.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-editor/src/test/kotlin/MainTests.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-guesser/src/test/kotlin/MainTests.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.run/desktop.run.xml" beforeDir="false" />
+    <list default="true" id="0822463e-c06c-4ba6-ba75-78371b5a7006" name="Changes" comment="add testing">
       <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/kotlin/Utils/BuildConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/kotlin/Utils/BuildConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-editor/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-editor/src/main/kotlin/Util/Resources.kt" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/kotlin/Util/Resources.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-editor/src/main/kotlin/ui/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/kotlin/ui/MainViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-guesser/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/test-guesser/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708331589292</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add testing">
+      <option name="closed" value="true" />
+      <created>1709986679550</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709986679550</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -309,7 +297,8 @@
     <MESSAGE value="1.0.5" />
     <MESSAGE value="1.0.9-1" />
     <MESSAGE value="1.0.9-2 bugfixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0.9-2 bugfixes" />
+    <MESSAGE value="add testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="add testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
