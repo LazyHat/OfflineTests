@@ -4,6 +4,6 @@ import org.junit.Test
 class MainTests {
     @Test
     fun mainTest(){
-        assertEquals(4, 2+3)
+        assertEquals(4, 2+2)
     }
 }
