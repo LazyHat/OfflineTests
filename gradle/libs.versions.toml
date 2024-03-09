@@ -1,0 +1,21 @@
+[versions]
+kotlin = "1.9.22"
+compose = "1.6.0"
+coroutines = "1.8.0"
+serialization = "1.6.2"
+collections-immutable = "0.3.7"
+viewmodel-kmp = "0.6.2"
+jvm-toolchain = "17"
+[libraries]
+kotlinx-coroutinesSwing = {group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "coroutines"}
+kotlinx-serializationJson = {group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization"}
+kotlinx-collectionsImmutable = {group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref="collections-immutable" }
+viewmodel = {group = "io.github.hoc081098", name = "kmp-viewmodel-koin-compose-jvm", version.ref = "viewmodel-kmp"}
+[plugins]
+kotlin-jvm = {id = "org.jetbrains.kotlin.jvm" , version.ref = "kotlin"}
+kotlin-serialization = {id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin"}
+compose = {id = "org.jetbrains.compose", version.ref = "compose"}
+[bundles]
+kotlinx = ["kotlinx-coroutinesSwing", "kotlinx-serializationJson", "kotlinx-collectionsImmutable"]
+
+

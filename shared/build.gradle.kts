@@ -1,16 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val serializationVersion = properties.get("serialization.version")
-val swingVersion = properties.get("swing.version")
-val kmpVMVersion = properties.get("kmp.viewmodel.version")
-val immutableVersion = properties.get("collections.immutable.version")
-val appVersion = properties.get("app.version").toString()
-val jvmToolChain = properties.get("jvm.toolchain").toString()
+val appVersion = properties["app.version"].toString()
+val jvmToolChain = libs.versions.jvm.toolchain.get()
 
 plugins {
-    kotlin("jvm")
-    id("org.jetbrains.compose")
-    id("org.jetbrains.kotlin.plugin.serialization")
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.compose)
 }
 
 group = "ru.lazyhat"
@@ -18,24 +14,62 @@ version = appVersion
 
 repositories {
     mavenCentral()
-    gradlePluginPortal()
     maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     google()
 }
 
 dependencies {
     implementation(compose.desktop.common)
-    //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:$swingVersion")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
-    //implementation("io.github.hoc081098:kmp-viewmodel-koin-compose-jvm:$kmpVMVersion")
-    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:$immutableVersion")
+    implementation(libs.bundles.kotlinx)
+    implementation("com.google.devtools.ksp:symbol-processing-api:1.9.22-1.0.16")
+    implementation("com.squareup:kotlinpoet:1.16.0")
+    implementation("com.squareup:kotlinpoet-ksp:1.16.0")
 }
 
-tasks.withType<JavaCompile>(){
+tasks.register("debugEditor"){
+    group = "mybuilds"
+    doLast { println("DEBUG-EDITOR") }
+    finalizedBy(":test-editor:run")
+}
+
+tasks.register("releaseEditor"){
+    group = "mybuilds"
+    doLast { println("RELEASE-EDITOR") }
+    finalizedBy(":test-editor:runDistributable")
+}
+
+tasks.register("packageEditor"){
+    group = "mybuilds"
+    doLast { println("PACKAGE-EDITOR") }
+    finalizedBy(":test-editor:package")
+}
+
+tasks.register("debugGuesser"){
+    group = "mybuilds"
+    doLast { println("DEBUG-GUESSER") }
+    finalizedBy(":test-guesser:run")
+}
+
+tasks.register("releaseGuesser"){
+    group = "mybuilds"
+    doLast { println("RELEASE-GUESSER") }
+    finalizedBy(":test-guesser:runDistributable")
+}
+
+tasks.register("packageGuesser"){
+    group = "mybuilds"
+    doLast { println("PACKAGE-GUESSER") }
+    finalizedBy(":test-guesser:package")
+}
+
+tasks.withType<JavaCompile>{
     sourceCompatibility = jvmToolChain
     targetCompatibility = jvmToolChain
 }
 
-tasks.withType<KotlinCompile>(){
+tasks.withType<KotlinCompile>{
     kotlinOptions.jvmTarget = jvmToolChain
+}
+repositories {
+    mavenCentral()
 }

@@ -4,20 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0822463e-c06c-4ba6-ba75-78371b5a7006" name="Changes" comment="1.0.9-1">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+    <list default="true" id="0822463e-c06c-4ba6-ba75-78371b5a7006" name="Changes" comment="1.0.9-2 bugfixes">
+      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/ksp/BuildConfigFileGenerator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/ksp/BuildConfigOptions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/ksp/BuildConfigProcessor.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/kotlin/ksp/SymbolProcessorProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-editor/src/test/kotlin/MainTests.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-guesser/src/test/kotlin/MainTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.run/desktop.run.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/kotlin/Utils/BuildConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/kotlin/Utils/BuildConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-editor/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-editor/src/main/kotlin/Util/Resources.kt" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/kotlin/Util/Resources.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-editor/src/main/resources/close.svg" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/resources/common/close.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-editor/src/main/resources/delete_forever.svg" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/resources/common/delete_forever.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-editor/src/main/resources/draft.svg" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/resources/common/draft.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-editor/src/main/resources/file_save.svg" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/resources/common/file_save.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-editor/src/main/resources/folder.svg" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/resources/common/folder.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-editor/src/main/resources/save.svg" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/resources/common/save.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-editor/src/main/kotlin/ui/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/test-editor/src/main/kotlin/ui/MainViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-guesser/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/test-guesser/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +46,31 @@
         <task path="$PROJECT_DIR$/test-editor">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/shared">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/test-guesser">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="offline-tests" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="offline-tests" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="offline-tests" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -60,12 +90,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "LazyHat"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;LazyHat&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -80,6 +110,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -90,14 +123,20 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.offline-tests [build].executor": "Run",
+    "Gradle.offline-tests:test-editor [run].executor": "Run",
+    "Gradle.offline-tests:test-guesser [run].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "android.gradle.sync.needed": "true",
     "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "corretto-19",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/lazyhat/Desktop/novsu2/course/offline-tests",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2582897"
+    "project.structure.side.proportion": "0.2582897",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -121,13 +160,14 @@
     <option name="myCommands">
       <command value="gradle --init-script" />
       <command value="gradle --scan" />
+      <command value="gradle get-tasks" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.offline-tests:test-editor [runDistributable]">
-    <configuration name="offline-tests:test-editor [dependencyInsight]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.offline-tests:test-editor [run]">
+    <configuration name="offline-tests [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/test-editor" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -135,7 +175,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="dependencyInsight" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -146,7 +186,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="offline-tests:test-editor [dependentComponents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="offline-tests:test-editor [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/test-editor" />
@@ -157,7 +197,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="dependentComponents" />
+            <option value="run" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -168,10 +208,10 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="offline-tests:test-editor [generateComposeResClass]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="offline-tests:test-guesser [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/test-editor" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/test-guesser" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -179,7 +219,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="generateComposeResClass" />
+            <option value="run" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -190,67 +230,21 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="offline-tests:test-editor [resolvableConfigurations]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/test-editor" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="resolvableConfigurations" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="offline-tests:test-editor [runDistributable]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/test-editor" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="runDistributable" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Gradle.desktop" />
-      <item itemvalue="Gradle.offline-tests:test-editor [dependencyInsight]" />
-      <item itemvalue="Gradle.offline-tests:test-editor [dependentComponents]" />
-      <item itemvalue="Gradle.offline-tests:test-editor [generateComposeResClass]" />
-      <item itemvalue="Gradle.offline-tests:test-editor [resolvableConfigurations]" />
-      <item itemvalue="Gradle.offline-tests:test-editor [runDistributable]" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.offline-tests:test-editor [runDistributable]" />
-        <item itemvalue="Gradle.offline-tests:test-editor [generateComposeResClass]" />
-        <item itemvalue="Gradle.offline-tests:test-editor [dependentComponents]" />
-        <item itemvalue="Gradle.offline-tests:test-editor [resolvableConfigurations]" />
-        <item itemvalue="Gradle.offline-tests:test-editor [dependencyInsight]" />
+        <item itemvalue="Gradle.offline-tests:test-editor [run]" />
+        <item itemvalue="Gradle.offline-tests [build]" />
+        <item itemvalue="Gradle.offline-tests:test-guesser [run]" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-3c5dfc45" />
+        <option value="jdk-20.0.2-temurin-20.0.2-4caba194b151-f8e14617" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -277,7 +271,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708329926488</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1.0.9-2 bugfixes">
+      <option name="closed" value="true" />
+      <created>1708331589292</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708331589292</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -306,7 +308,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1.0.5" />
     <MESSAGE value="1.0.9-1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0.9-1" />
+    <MESSAGE value="1.0.9-2 bugfixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0.9-2 bugfixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

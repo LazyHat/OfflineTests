@@ -5,7 +5,7 @@ import java.io.File
 
 
 object R {
-    private val resourceDir = if (BuildConfig.debug) File("test-editor/src/main/resources/common") else File(System.getProperty("compose.application.resources.dir"))
+    private val resourceDir = if (BuildConfig.debug) File("src/main/resources/common") else File(System.getProperty("compose.application.resources.dir"))
 
     object drawable {
 

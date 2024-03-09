@@ -95,7 +95,10 @@ class MainViewModel : ViewModel() {
         _memoryTest.value.let { test ->
             check(test != null)
             if (test.questions.all { it.checkIfOneAnswerSetted() }) {
-                FileApi.saveTestToFile(_file.value, test, {}, {
+                FileApi.saveTestToFile(_file.value, test, {
+                    if (_file.value == null)
+                        _file.value = it
+                }, {
                     showOverwriteDialog(_file.value?.name.orEmpty(), it)
                 })
             } else _dialogState.showErrorDialog("Not all questions filled")

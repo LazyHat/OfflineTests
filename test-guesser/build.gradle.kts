@@ -1,36 +1,24 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val serializationVersion = properties.get("serialization.version")
-val swingVersion = properties.get("swing.version")
-val kmpVMVersion = properties.get("kmp.viewmodel.version")
-val immutableVersion = properties.get("collections.immutable.version")
-val appVersion = properties.get("app.version").toString()
-val jvmToolChain = properties.get("jvm.toolchain").toString()
+val appVersion = properties["app.version"].toString()
+val jvmToolChain = libs.versions.jvm.toolchain.get()
 
 plugins {
-    kotlin("jvm")
-    id("org.jetbrains.compose")
-    id("org.jetbrains.kotlin.plugin.serialization")
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.compose)
 }
 
 group = "ru.lazyhat"
 version = appVersion
 
-repositories {
-    mavenCentral()
-    gradlePluginPortal()
-    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-    google()
-}
-
 dependencies {
-    implementation(compose.desktop.currentOs)
     implementation(project(":shared"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:$swingVersion")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
-    implementation("io.github.hoc081098:kmp-viewmodel-koin-compose-jvm:$kmpVMVersion")
-    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:$immutableVersion")
+    implementation(compose.desktop.currentOs)
+    implementation(compose.desktop.uiTestJUnit4)
+    implementation(libs.bundles.kotlinx)
+    implementation(libs.viewmodel)
 }
 
 compose.desktop {
@@ -49,11 +37,11 @@ compose.desktop {
 }
 
 
-tasks.withType<KotlinCompile>(){
+tasks.withType<KotlinCompile>{
     kotlinOptions.jvmTarget = jvmToolChain
 }
 
-tasks.withType<JavaCompile>(){
+tasks.withType<JavaCompile>{
     sourceCompatibility = jvmToolChain
     targetCompatibility = jvmToolChain
 }
